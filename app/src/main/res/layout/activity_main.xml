@@ -1,64 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/mainTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Hello World!" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_left"
+        android:name="io.github.guowenlong.app.LeftFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="32dp"
-        android:text="send" />
-
-    <Button
-        android:id="@+id/send_sticky"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/send"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="32dp"
-        android:text="send_sticky" />
-
-    <Button
-        android:id="@+id/register_sticky"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="32dp"
-        android:text="register_sticky" />
-    <Button
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/register_sticky"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="32dp"
-        android:text="register" />
-    <Button
-        android:id="@+id/unregister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/register"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="32dp"
-        android:text="unregister" />
-    <Button
-        android:id="@+id/buttonTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/mainTextView"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="32dp"
-        android:text="Await next event"
-        tools:ignore="HardcodedText" />
-</RelativeLayout>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_right"
+        android:name="io.github.guowenlong.app.RightFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

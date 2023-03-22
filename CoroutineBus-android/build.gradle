@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'io.github.wenlong-guo'
-version = '1.5.0'
+version = '1.7.0'
 
 android {
     namespace 'io.github.guowenlong.coroutinebus.android'
@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         minSdk 14
-        version '1.5.0'
+        version '1.7.0'
     }
 
     compileOptions {
@@ -40,7 +40,6 @@ android {
 dependencies {
     api 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
     api 'androidx.appcompat:appcompat:1.4.1'
-    api project(path: ':CoroutineBus')
 }
 
 
@@ -52,7 +51,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'io.github.wenlong-guo'
                 artifactId = 'coroutinebus-android'
-                version = '1.5.0'
+                version = '1.7.0'
             }
         }
     }

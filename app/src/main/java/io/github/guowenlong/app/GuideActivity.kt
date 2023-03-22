@@ -2,14 +2,8 @@ package io.github.guowenlong.app
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import io.github.guowenlong.app.databinding.ActivityGuideBinding
-import io.github.guowenlong.coroutinebus.CoroutineBus
-import kotlin.random.Random
 
 /**
  * Description: 引导页

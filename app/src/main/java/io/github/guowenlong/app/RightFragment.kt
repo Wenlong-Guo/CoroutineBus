@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import io.github.guowenlong.app.databinding.FragmentRightBinding
-import io.github.guowenlong.coroutinebus.CoroutineBus
+import io.github.guowenlong.coroutinebus.android.CoroutineBus
 import io.github.guowenlong.coroutinebus.android.subscribeByLifecycle
 import kotlinx.coroutines.Dispatchers
 

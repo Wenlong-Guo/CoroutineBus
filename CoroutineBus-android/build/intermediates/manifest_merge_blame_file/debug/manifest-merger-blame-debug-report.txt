@@ -4,8 +4,8 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="14"
-6-->D:\Develop\Android\Github\CoroutineBus\CoroutineBus-android\src\main\AndroidManifest.xml
+6-->D:\Develop\Android\Github\CoroutineBus\coroutinebus-android\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="14" />
-7-->D:\Develop\Android\Github\CoroutineBus\CoroutineBus-android\src\main\AndroidManifest.xml
+7-->D:\Develop\Android\Github\CoroutineBus\coroutinebus-android\src\main\AndroidManifest.xml
 8
 9</manifest>

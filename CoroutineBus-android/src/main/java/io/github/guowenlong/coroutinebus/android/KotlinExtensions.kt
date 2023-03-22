@@ -4,8 +4,6 @@ import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
-import io.github.guowenlong.coroutinebus.Bus
-import io.github.guowenlong.coroutinebus.CoroutineBus
 import kotlinx.coroutines.CoroutineDispatcher
 
 /**

@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'io.github.wenlong-guo'
-version = '1.2.0'
+version = '1.5.0'
 
 android {
     namespace 'io.github.guowenlong.coroutinebus.android'
@@ -13,6 +13,7 @@ android {
 
     defaultConfig {
         minSdk 14
+        version '1.5.0'
     }
 
     compileOptions {
@@ -51,7 +52,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'io.github.wenlong-guo'
                 artifactId = 'coroutinebus-android'
-                version = '1.3.0'
+                version = '1.5.0'
             }
         }
     }

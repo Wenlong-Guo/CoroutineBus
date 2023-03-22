@@ -16,5 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CoroutineBus"
 include ':app'
-include ':CoroutineBus'
 include ':coroutinebus-android'

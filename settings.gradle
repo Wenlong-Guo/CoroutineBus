@@ -16,4 +16,3 @@ rootProject.name = "CoroutineBus"
 include ':app'
 include ':CoroutineBus'
 include ':CoroutineBus-android'
-

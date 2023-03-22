@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import io.github.guowenlong.app.databinding.FragmentLeftBinding
-import io.github.guowenlong.coroutinebus.android.CoroutineBus
+import io.github.guowenlong.coroutinebus.CoroutineBus
 import kotlinx.coroutines.Dispatchers
 
 /**
@@ -37,18 +37,18 @@ class LeftFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnSend.setOnClickListener {
-            CoroutineBus.post(RandomNumberEvent(22))
+            io.github.guowenlong.coroutinebus.CoroutineBus.post(RandomNumberEvent(22))
          }
 
         binding.btnRegister.setOnClickListener {
-            CoroutineBus.subscribe(this, dispatcher = Dispatchers.IO) { event: RandomNumberEvent ->
+            io.github.guowenlong.coroutinebus.CoroutineBus.subscribe(this, dispatcher = Dispatchers.IO) { event: RandomNumberEvent ->
                 binding.tvContent.text = "${binding.tvContent.text} \n ${event.number}"
                 Log.e("count", "New random number: ${event.number}")
             }
         }
 
         binding.btnRegisterSticky.setOnClickListener {
-            CoroutineBus.subscribe(this, isSticky = true , dispatcher = Dispatchers.Main) { event: RandomNumberEvent ->
+            io.github.guowenlong.coroutinebus.CoroutineBus.subscribe(this, isSticky = true , dispatcher = Dispatchers.Main) { event: RandomNumberEvent ->
                 Toast.makeText(requireContext(), "any: $event", Toast.LENGTH_SHORT).show()
                 binding.tvContent.text = "${binding.tvContent.text} \n ${event.number}"
                 Log.e("MainActivity", "New random number: ${event.number}")

@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import io.github.guowenlong.app.databinding.FragmentRightBinding
-import io.github.guowenlong.coroutinebus.android.CoroutineBus
-import io.github.guowenlong.coroutinebus.android.subscribeByLifecycle
+import io.github.guowenlong.coroutinebus.CoroutineBus
+import io.github.guowenlong.coroutinebus.subscribeByLifecycle
 import kotlinx.coroutines.Dispatchers
 
 /**
@@ -36,10 +36,10 @@ class RightFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnSend.setOnClickListener {
-            CoroutineBus.post(RandomNumberEvent(22))
+            io.github.guowenlong.coroutinebus.CoroutineBus.post(RandomNumberEvent(22))
         }
 
-        CoroutineBus.subscribeByLifecycle(
+        io.github.guowenlong.coroutinebus.CoroutineBus.subscribeByLifecycle(
             this, isSticky = true, lifecycleOwner = this, dispatcher = Dispatchers.Main
         ) { event: RandomNumberEvent ->
             binding.tvContent.text = "${binding.tvContent.text} \n ${event.number}"

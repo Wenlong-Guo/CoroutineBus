@@ -42,7 +42,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation project(path: ':CoroutineBus-android')
     implementation project(path: ':CoroutineBus')
-//    implementation 'com.github.Wenlong-Guo.CoroutineBus:coroutinebus:1.0.1'
+//    implementation 'io.github.wenlong-guo:coroutinebus-android:1.2.0'
 //    implementation 'com.github.Wenlong-Guo.CoroutineBus:coroutinebus-android:1.0.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import io.github.guowenlong.app.databinding.FragmentLeftBinding
 import io.github.guowenlong.coroutinebus.CoroutineBus
 import kotlinx.coroutines.Dispatchers
+import kotlin.random.Random
 
 /**
  * Description: 左侧Fragment
@@ -37,13 +38,18 @@ class LeftFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnSend.setOnClickListener {
-            CoroutineBus.post(RandomNumEvent(22))
+            CoroutineBus.post(RandomNumEvent(Random.nextInt(0, 100)))
         }
 
         binding.btnRegister.setOnClickListener {
-            CoroutineBus.subscribe(this, isSticky = false ,dispatcher = Dispatchers.Main) { event: RandomNumEvent ->
+            CoroutineBus.subscribe(
+                this,
+                isSticky = false,
+                replay = 100,
+                dispatcher = Dispatchers.Main
+            ) { event: RandomNumEvent ->
                 Log.e("Left", "LeftFragment")
-                binding.tvContent.text = "${binding.tvContent.text} \n ${event.number}"
+                binding.tvContent.text = "${binding.tvContent.text} \n 非粘性事件 收到 ${event.number}"
             }
         }
 
@@ -51,11 +57,20 @@ class LeftFragment : Fragment() {
             CoroutineBus.subscribe(
                 this,
                 isSticky = true,
+                replay = 100,
                 dispatcher = Dispatchers.Main
             ) { event: RandomNumEvent ->
-                Toast.makeText(requireContext(), "sticky: $event", Toast.LENGTH_SHORT).show()
-                binding.tvContent.text = "${binding.tvContent.text} \n ${event.number}"
+                binding.tvContent.text = "${binding.tvContent.text} \n 粘性事件 收到 : ${event.number}"
             }
         }
+        binding.btnUnregister.setOnClickListener {
+            CoroutineBus.unsubscribe(this, RandomNumEvent::class.java)
+        }
+
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }

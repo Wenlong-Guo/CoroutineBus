@@ -42,7 +42,7 @@ class RightFragment : Fragment() {
         //onStart的时候注册,onStop的时候取消注册
         //dispatcher = Dispatchers.Main 可以不设置 默认 dispatcher = Dispatchers.Default
         CoroutineBus.subscribeByLifecycle(
-            this, isSticky = true, lifecycleOwner = this
+            this, isSticky = false, lifecycleOwner = this
         ) { event: RandomNumEvent ->
             Toast.makeText(
                 requireContext(),

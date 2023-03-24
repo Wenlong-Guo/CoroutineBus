@@ -27,6 +27,9 @@ class GuideActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.btnStart.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            binding.root.postDelayed({
+                CoroutineBus.unsubscribe(this,RandomNumEvent::class.java)
+            }, 5000)
         }
         CoroutineBus.subscribeByLifecycle(
             this,

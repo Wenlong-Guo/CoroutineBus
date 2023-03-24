@@ -4,16 +4,12 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'io.github.wenlong-guo'
-version = '1.8.0'
-
 android {
     namespace 'io.github.guowenlong.coroutinebus'
     compileSdk 33
 
     defaultConfig {
         minSdk 14
-        version '1.8.0'
     }
 
     compileOptions {
@@ -46,12 +42,11 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
                 groupId = 'io.github.wenlong-guo'
                 artifactId = 'coroutinebus'
-                version = '1.8.0'
+                version = '2.0.0'
             }
         }
     }

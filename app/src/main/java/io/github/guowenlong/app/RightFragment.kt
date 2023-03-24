@@ -10,10 +10,9 @@ import androidx.fragment.app.Fragment
 import io.github.guowenlong.app.databinding.FragmentRightBinding
 import io.github.guowenlong.coroutinebus.CoroutineBus
 import io.github.guowenlong.coroutinebus.subscribeByLifecycle
-import kotlinx.coroutines.Dispatchers
 
 /**
- * Description:
+ * Description: 右侧Fragment
  * Author:      郭文龙
  * Date:        2023/3/20 22:27
  * Email:       guowenlong20000@sina.com
@@ -36,15 +35,21 @@ class RightFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnSend.setOnClickListener {
-            io.github.guowenlong.coroutinebus.CoroutineBus.post(RandomNumberEvent(22))
+            CoroutineBus.post(RandomNumEvent(22))
         }
 
-        io.github.guowenlong.coroutinebus.CoroutineBus.subscribeByLifecycle(
-            this, isSticky = true, lifecycleOwner = this, dispatcher = Dispatchers.Main
-        ) { event: RandomNumberEvent ->
-            binding.tvContent.text = "${binding.tvContent.text} \n ${event.number}"
-            Toast.makeText(requireContext(), "any: $event", Toast.LENGTH_SHORT).show()
-            Log.e("count", "New random number: ${event.number}")
+        //自动跟随生命周期 注册和取消注册
+        //onStart的时候注册,onStop的时候取消注册
+        //dispatcher = Dispatchers.Main 可以不设置 默认 dispatcher = Dispatchers.Default
+        CoroutineBus.subscribeByLifecycle(
+            this, isSticky = true, lifecycleOwner = this
+        ) { event: RandomNumEvent ->
+            Toast.makeText(
+                requireContext(),
+                "RightFragment页面收到随机数: ${event.number}",
+                Toast.LENGTH_SHORT
+            ).show()
+            Log.e("Right", "RightFragment")
         }
     }
 }

@@ -1,5 +1,6 @@
 package io.github.guowenlong.app
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,7 +13,7 @@ import io.github.guowenlong.coroutinebus.CoroutineBus
 import kotlinx.coroutines.Dispatchers
 
 /**
- * Description:
+ * Description: 左侧Fragment
  * Author:      郭文龙
  * Date:        2023/3/20 22:27
  * Email:       guowenlong20000@sina.com
@@ -23,8 +24,6 @@ class LeftFragment : Fragment() {
         FragmentLeftBinding.inflate(layoutInflater)
     }
 
-    private val event = RandomNumberEvent(22)
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,25 +32,29 @@ class LeftFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnSend.setOnClickListener {
-            io.github.guowenlong.coroutinebus.CoroutineBus.post(RandomNumberEvent(22))
-         }
+            CoroutineBus.post(RandomNumEvent(22))
+        }
 
         binding.btnRegister.setOnClickListener {
-            io.github.guowenlong.coroutinebus.CoroutineBus.subscribe(this, dispatcher = Dispatchers.IO) { event: RandomNumberEvent ->
+            CoroutineBus.subscribe(this, isSticky = false ,dispatcher = Dispatchers.Main) { event: RandomNumEvent ->
+                Log.e("Left", "LeftFragment")
                 binding.tvContent.text = "${binding.tvContent.text} \n ${event.number}"
-                Log.e("count", "New random number: ${event.number}")
             }
         }
 
         binding.btnRegisterSticky.setOnClickListener {
-            io.github.guowenlong.coroutinebus.CoroutineBus.subscribe(this, isSticky = true , dispatcher = Dispatchers.Main) { event: RandomNumberEvent ->
-                Toast.makeText(requireContext(), "any: $event", Toast.LENGTH_SHORT).show()
+            CoroutineBus.subscribe(
+                this,
+                isSticky = true,
+                dispatcher = Dispatchers.Main
+            ) { event: RandomNumEvent ->
+                Toast.makeText(requireContext(), "sticky: $event", Toast.LENGTH_SHORT).show()
                 binding.tvContent.text = "${binding.tvContent.text} \n ${event.number}"
-                Log.e("MainActivity", "New random number: ${event.number}")
             }
         }
     }

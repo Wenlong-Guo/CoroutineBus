@@ -1,7 +1,7 @@
 # CoroutineBus
 用Kotlin协程制作的事件总线框架.
 
-[![License](https://img.shields.io/github/license/Wenlong-Guo/CoroutineBus)](https://github.com/Wenlong-Guo/CoroutineBus/blob/master/license)
+[![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen.svg)](https://github.com/Wenlong-Guo/CoroutineBus/blob/master/license)
 ![Api](https://img.shields.io/badge/API-14+-brightgreen.svg)
 ![Release](https://img.shields.io/github/v/release/Wenlong-Guo/CoroutineBus?include_prereleases)
 

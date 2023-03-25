@@ -39,7 +39,7 @@ object CoroutineBus {
     }
 
     /**
-     * 取消订阅
+     * 取消该 [id] 的 [clazz] 事件的订阅
      *
      * @param id 订阅者的唯一标识
      * @param clazz 订阅的事件类型
@@ -84,6 +84,16 @@ object CoroutineBus {
                 it.emit(event)
             }
         }
+    }
+
+    /**
+     * 是否已经注册过该事件
+     *
+     *  @param id 订阅者的唯一标识
+     *  @param clazz 订阅的事件类型
+     */
+    fun isSubscribed(id: Any, clazz: Class<*>): Boolean {
+        return subscribers[clazz]?.containsKey(id) == true
     }
 
     /**

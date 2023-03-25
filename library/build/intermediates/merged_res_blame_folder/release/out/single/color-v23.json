@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "io.github.guowenlong.coroutinebus.library-merged_res-16:/color-v23/abc_tint_seek_thumb.xml",
+        "source": "io.github.guowenlong.coroutinebus.library-appcompat-1.4.1-7:/color-v23/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "io.github.guowenlong.coroutinebus.library-merged_res-16:/color-v23/abc_tint_edittext.xml",
+        "source": "io.github.guowenlong.coroutinebus.library-appcompat-1.4.1-7:/color-v23/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "io.github.guowenlong.coroutinebus.library-merged_res-16:/color-v23/abc_color_highlight_material.xml",
+        "source": "io.github.guowenlong.coroutinebus.library-appcompat-1.4.1-7:/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "io.github.guowenlong.coroutinebus.library-merged_res-16:/color-v23/abc_btn_colored_text_material.xml",
+        "source": "io.github.guowenlong.coroutinebus.library-appcompat-1.4.1-7:/color-v23/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "io.github.guowenlong.coroutinebus.library-merged_res-16:/color-v23/abc_tint_switch_track.xml",
+        "source": "io.github.guowenlong.coroutinebus.library-appcompat-1.4.1-7:/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "io.github.guowenlong.coroutinebus.library-merged_res-16:/color-v23/abc_tint_btn_checkable.xml",
+        "source": "io.github.guowenlong.coroutinebus.library-appcompat-1.4.1-7:/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "io.github.guowenlong.coroutinebus.library-merged_res-16:/color-v23/abc_tint_spinner.xml",
+        "source": "io.github.guowenlong.coroutinebus.library-appcompat-1.4.1-7:/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "io.github.guowenlong.coroutinebus.library-merged_res-16:/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "io.github.guowenlong.coroutinebus.library-appcompat-1.4.1-7:/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "io.github.guowenlong.coroutinebus.library-merged_res-16:/color-v23/abc_tint_default.xml",
+        "source": "io.github.guowenlong.coroutinebus.library-appcompat-1.4.1-7:/color-v23/abc_tint_default.xml"
+    }
+]

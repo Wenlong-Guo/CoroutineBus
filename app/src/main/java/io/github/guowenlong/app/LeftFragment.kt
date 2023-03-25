@@ -2,7 +2,6 @@ package io.github.guowenlong.app
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,21 +40,30 @@ class LeftFragment : Fragment() {
             CoroutineBus.post(RandomNumEvent(Random.nextInt(0, 100)))
         }
 
+        //同一个ID不可以注册多次
         binding.btnRegister.setOnClickListener {
+            if (CoroutineBus.isSubscribed(this, RandomNumEvent::class.java)) {
+                CoroutineBus.unsubscribe(this, RandomNumEvent::class.java)
+                Toast.makeText(requireContext(), "如果同一[id]多次注册会抛异常,已经反注册上一个订阅者并绑定了新的订阅者", Toast.LENGTH_SHORT).show()
+            }
             CoroutineBus.subscribe(
-                this,
+                this,//改为 LeftFragment::class.java 也可以,便于跨界面取消订阅
                 isSticky = false,
                 replay = 100,
                 dispatcher = Dispatchers.Main
             ) { event: RandomNumEvent ->
-                Log.e("Left", "LeftFragment")
                 binding.tvContent.text = "${binding.tvContent.text} \n 非粘性事件 收到 ${event.number}"
             }
         }
 
+        //同一个ID不可以注册多次
         binding.btnRegisterSticky.setOnClickListener {
+            if (CoroutineBus.isSubscribed(this, RandomNumEvent::class.java)) {
+                CoroutineBus.unsubscribe(this, RandomNumEvent::class.java)
+                Toast.makeText(requireContext(), "如果同一[id]多次注册会抛异常,已经反注册上一个订阅者并绑定了新的订阅者", Toast.LENGTH_SHORT).show()
+            }
             CoroutineBus.subscribe(
-                this,
+                this,//改为 LeftFragment::class.java 也可以,便于跨界面取消订阅
                 isSticky = true,
                 replay = 100,
                 dispatcher = Dispatchers.Main
@@ -66,11 +74,10 @@ class LeftFragment : Fragment() {
         binding.btnUnregister.setOnClickListener {
             CoroutineBus.unsubscribe(this, RandomNumEvent::class.java)
         }
-
-
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        CoroutineBus.unsubscribe(this)
     }
 }

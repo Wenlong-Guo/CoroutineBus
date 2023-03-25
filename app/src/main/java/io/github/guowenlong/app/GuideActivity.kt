@@ -36,7 +36,6 @@ class GuideActivity : AppCompatActivity() {
             isSticky = true,
             lifecycleOwner = this,
             dispatcher = Dispatchers.Main
-
         ) { event: RandomNumEvent ->
             Toast.makeText(
                 this@GuideActivity,

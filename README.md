@@ -36,6 +36,12 @@ dependencyResolutionManagement {
 }
 ```
 
+Add dependency to your app `build.gradle` file:
+```groovy
+dependencies {
+    implementation 'com.github.Wenlong-Guo:CoroutineBus:2.0.0'
+}
+```
 # Usage
 
 1. Subscribe

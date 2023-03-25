@@ -36,6 +36,13 @@ dependencyResolutionManagement {
 }
 ```
 
+在项目 app 模块下的 `build.gradle` 文件中加入远程依赖
+```groovy
+dependencies {
+    implementation 'com.github.Wenlong-Guo:CoroutineBus:2.0.0'
+}
+```
+
 # Usage
 
 1. 自动订阅

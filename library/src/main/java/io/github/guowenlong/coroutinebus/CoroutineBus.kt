@@ -1,6 +1,5 @@
 package io.github.guowenlong.coroutinebus
 
-import android.util.Log
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import java.util.concurrent.ConcurrentHashMap

@@ -11,7 +11,7 @@
 协程总线是基于 Kotlin 协程的事件总线。它是一种轻量级、高性能且易于使用的事件总线。它适用于Android，Java和Kotlin项目。
 
 # 下载示例代码安装包
-1. [点击此处下载](https://bintray.com/wenlong-guo/maven/CoroutineBus/_latestVersion)
+1. [点击此处下载](https://www.pgyer.com/CoroutineBus)
 2. 扫描下面二维码下载
 
 ![download](release/QRcode.png)

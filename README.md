@@ -11,7 +11,7 @@ Event Bus By Kotlin Coroutine.
 CoroutineBus is an event bus based on Kotlin coroutine. It is a lightweight, high-performance, and easy-to-use event bus. It is suitable for Android, Java, and Kotlin projects.
 
 # Download Samples APK
-1. [Click to download](https://bintray.com/wenlong-guo/maven/CoroutineBus/_latestVersion)
+1. [Click to download](https://www.pgyer.com/CoroutineBus)
 2. Scan QR code to download
 
 ![download](release/QRcode.png)
